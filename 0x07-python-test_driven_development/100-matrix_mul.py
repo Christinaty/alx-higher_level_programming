@@ -85,3 +85,55 @@ def matrix_mul(m_a, m_b):
         new_matrix.append(ls)
 
     return new_matrix
+            raise ValueError("m_b can't be empty")
+
+    for l in m_a:
+        for e in l:
+            if type(e) is not int and type(e) is not float:
+                raise TypeError(
+                    'm_a should contain only integers or floats'
+                    )
+
+    for l in m_b:
+        for e in l:
+            if type(e) is not int and type(e) is not float:
+                raise TypeError(
+                    'm_b should contain only integers or floats'
+                    )
+
+    size = len(m_a[0])
+    for l in m_a:
+        if len(l) != size:
+            raise TypeError(
+                'each row of m_a must be of the same size'
+                )
+
+    size = len(m_b[0])
+    for l in m_b:
+        if len(l) != size:
+            raise TypeError(
+                'each row of m_b must be of the same size'
+                )
+
+    if len(m_a[0]) != len(m_b):
+        raise ValueError("m_a and m_b can't be multiplied")
+
+    new_matrix = list()
+    c_size = len(m_b[1])
+
+    for l in m_a:
+        ls = []
+        i = 0   # for b
+        n = 0   # for a
+        j = 0   # for ls
+        for c in range(c_size):
+            ls.append(0)
+            for r in m_b:
+                ls[j] += r[i] * l[n]
+                n += 1
+            i += 1
+            n = 0
+            j += 1
+        new_matrix.append(ls)
+
+    return new_matrix
