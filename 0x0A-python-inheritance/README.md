@@ -1,30 +1,51 @@
-SCHOOL
+🇨🇴 Python - Inheritance
+What is a superclass, baseclass or parentclass
+What is a subclass
+How to list all attributes and methods of a class or instance
+When can an instance have new attributes
+How to inherit class from another
+How to define a class with multiple base classes
+What is the default class every class inherit from
+How to override a method or attribute inherited from the base class
+Which attributes or methods are available by heritage to subclasses
+What is the purpose of inheritance
+What are, when and how to use isinstance, issubclass, type and super built-in functions
+Examples
+Create a class method for validate an integer into the class BaseGeometry
 
-     _____     ______     _____  _____  
+BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
-    /  _  \    |    |     \    \/    / 
+bg = BaseGeometry()
 
-   /  /_\  \   |    |      \   ||   /   
+bg.integer_validator("my_int", 12)
+bg.integer_validator("width", 89)
 
-  /    |    \  |    |___   /   ||   \   
+try:
+    bg.integer_validator("name", "John")
+except Exception as e:
+    print("[{}] {}".format(e.__class__.__name__, e))
 
- /  __/ \__  \ |___ _ ___\/    /\    \  
+try:
+    bg.integer_validator("age", 0)
+except Exception as e:
+    print("[{}] {}".format(e.__class__.__name__, e))
 
-/____/   \____\|_________/____/  \    \
+try:
+    bg.integer_validator("distance", -4)
+except Exception as e:
+    print("[{}] {}".format(e.__class__.__name__, e))
+The output
 
-                                  \____\
+[TypeError] name must be an integer
+[ValueError] age must be greater than 0
+[ValueError] distance must be greater than 0
+check the code in the file 7-base_geometry.py
 
-High Level Programming
+Prerequisites
+8 lecture hours about Inheritance
 
-This repository contains programs written in Python for my High Level Programming projects in ALX software engineering curriculum. Topics covered in these projects include data structures (e.g. arrrays, linked lists, binary trees), algorithms (e.g. searching, sorting) and more.
+Installing
+for have the code in your local machine you only need download the code files and put it into a directory
 
-
-
-Projects
-
-| 0x00. Python - Hello World | | 0x01-python-if_else_loops_functions | | 0x02-python-import_modules | | 0x03-python-data_structures | | 0x04-python-more_data_structures |
-
-
-
-Author : Christina Adegbaju
-
+Authors
+---Christina Adegbaju
