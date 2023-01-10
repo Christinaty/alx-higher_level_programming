@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 0x06. Python - Classes and Objects
 
 Description
@@ -45,3 +46,6 @@ What is and what does contain dict of a class and of an instance of a class
 How does Python find the attributes of an object or class
 
 How to use the getattr function
+=======
+# alx-higher_level_programming
+>>>>>>> a7007b00c0203e769deeb60491a1088884ef649d
